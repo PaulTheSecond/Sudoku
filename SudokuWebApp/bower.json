@@ -1,0 +1,64 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "modernizr": "^3.3.1",
+    "jquery": "^3.1.1",
+    "angular": "1.6.2",
+    "angular-route": "1.6.2",
+    "angular-animate": "1.6.2",
+    "angular-bootstrap": "^2.5.0",
+    "angular-loading-bar": "^0.5.2",
+    "angular-resource": "1.6.2",
+    "angular-messages": "1.6.2"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.min.js",
+        "dist/css/bootstrap.min.css"
+      ]
+    },
+    "angular": {
+      "main": [
+        "angular.min.js"
+      ]
+    },
+    "angular-animate": {
+      "main": [
+        "angular-animate.min.js"
+      ]
+    },
+    "angular-bootstrap": {
+      "main": [
+        "ui-bootstrap.min.js",
+        "ui-bootstrap-tpls.min.js",
+        "ui-bootstrap-csp.css"
+      ]
+    },
+    "angular-route": {
+      "main": [
+        "angular-route.min.js"
+      ]
+    },
+    "jquery": {
+      "main": [
+        "dist/jquery.min.js"
+      ]
+    },
+    "angular-resource": {
+      "main": [
+        "angular-resource.min.js"
+      ]
+    },
+    "angular-messages": {
+      "main": [
+        "angular-messages.min.js"
+      ]
+    }
+  },
+  "resolutions": {
+    "angular": "^1.5.x"
+  }
+}
