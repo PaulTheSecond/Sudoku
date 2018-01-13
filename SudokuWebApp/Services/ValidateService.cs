@@ -1,4 +1,5 @@
-﻿using SudokuWebApp.Model;
+﻿using SudokuWebApp.Extensions;
+using SudokuWebApp.Model;
 
 namespace SudokuWebApp.Services
 {
@@ -7,10 +8,29 @@ namespace SudokuWebApp.Services
     {
         public bool Execute(Cell gameField)
         {
-            if(!gameField.Validate())
+            if(!ValidateAreas(gameField))
                 return false;
             if (!ValidateRows(gameField))
                 return false;
+            if (!ValidateColumns(gameField))
+                return false;
+            return true;
+        }
+
+        private bool ValidateAreas(Cell gameField)
+        {
+            if (!gameField.Validate())
+                return false;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if(!gameField[i, j].Validate())
+                    {
+                        return false;
+                    }
+                }
+            }
             return true;
         }
 
@@ -21,7 +41,7 @@ namespace SudokuWebApp.Services
             {
                 if (i > 0 && i % 3 == 0)
                     r++;
-                var cell = MakeCellFromRow(new[] { gameField[r, 0], gameField[r, 1], gameField[r, 2] }, i < 3 ? i : i < 6 ? i - 3 : i - 9);
+                var cell = MakeCellFromRow(new[] { gameField[r, 0], gameField[r, 1], gameField[r, 2] }, i.GetCellInAreaIndex());
                 if (!cell.Validate())
                     return false;
             }
@@ -39,6 +59,7 @@ namespace SudokuWebApp.Services
         private Cell MakeCellFromRow(Cell[] row, int index)
         {
             var res = new Cell();
+            res.SetParent(new Cell());
             var resRow = 0;
             foreach (var item in row)
             {

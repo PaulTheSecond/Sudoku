@@ -17,10 +17,16 @@ namespace SudokuWebApp.Model
 
         public int Size()
         {
-            return _children?.Length ?? 0;
+            return _children?.GetLength(0) ?? 0;
         }
 
         public Cell Parent { get; private set; }
+
+        public CellIndex Index { get; set; }
+
+        public bool IsField => Parent == null;
+
+        public bool IsArea => !IsField && !Value.HasValue;
 
         public Cell this[int i, int j]
         {
@@ -34,7 +40,10 @@ namespace SudokuWebApp.Model
                     _children = new Cell[3, 3];
                     _accessor = new DirectAccessor<Cell>(_children);
                 }
-                value.Parent = this;
+
+                value.SetParent(this);
+                value.Index = new CellIndex { I = i, J = j };
+
                 _accessor[i, j] = value;
             }
         }
@@ -42,7 +51,7 @@ namespace SudokuWebApp.Model
         public bool Validate()
         {
             //continue validate in low layer
-            if (Parent == null)
+            if (IsField && !IsArea)
                 return true;
             //check value
             if (Value.HasValue)
@@ -65,7 +74,7 @@ namespace SudokuWebApp.Model
 
         public void Transpose()
         {            
-            if(Parent != null)
+            if(IsField || IsArea)
             {
                 for (int i = 0; i < Size(); i++)
                 {
@@ -80,6 +89,16 @@ namespace SudokuWebApp.Model
                 _accessor = new TransposedAccessor<Cell>(_children);
             else
                 _accessor = new DirectAccessor<Cell>(_children);
+        }
+
+        public void SetParent(Cell parent)
+        {
+            this.Parent = parent;
+        }
+
+        public override string ToString()
+        {
+            return Value?.ToString() ?? (Parent != null ? $"Area {Index}" : "This is game field");
         }
     }    
 }
