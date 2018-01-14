@@ -1,7 +1,7 @@
 ﻿using SudokuWebApp.Extensions;
 using SudokuWebApp.Model;
 
-namespace SudokuWebApp.Services
+namespace SudokuWebApp.Services.Validation
 {
 
     public class ValidateService : IValidateService

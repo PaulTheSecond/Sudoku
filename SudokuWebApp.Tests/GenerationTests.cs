@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SudokuWebApp.Services;
+using SudokuWebApp.Services.Generation;
 
 namespace SudokuWebApp.Tests
 {

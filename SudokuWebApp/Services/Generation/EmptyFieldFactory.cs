@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using SudokuWebApp.Model;
+﻿using SudokuWebApp.Model;
 
-namespace SudokuWebApp.Services
+namespace SudokuWebApp.Services.Generation
 {
     public class EmptyFieldFactory : IEmptyFieldFactory
     {

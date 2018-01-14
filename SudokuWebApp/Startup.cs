@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SudokuWebApp.Services.Generation;
+using SudokuWebApp.Services.Validation;
 
 namespace SudokuWebApp
 {
@@ -18,6 +20,12 @@ namespace SudokuWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            //register Services
+            services.AddTransient<IGenerationFieldService, GenerationFieldService>();
+            services.AddSingleton<IEmptyFieldFactory, EmptyFieldFactory>();
+            services.AddTransient<IValidateService, ValidateService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,6 +1,6 @@
 ﻿using SudokuWebApp.Model;
 
-namespace SudokuWebApp.Services
+namespace SudokuWebApp.Services.Generation
 {
     public interface IGenerationFieldService
     {

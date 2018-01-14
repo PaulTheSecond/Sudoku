@@ -2,7 +2,7 @@
 using SudokuWebApp.Extensions;
 using SudokuWebApp.Model;
 
-namespace SudokuWebApp.Services
+namespace SudokuWebApp.Services.Generation
 {
     public class GenerationFieldService : IGenerationFieldService
     {
