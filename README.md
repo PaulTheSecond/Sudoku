@@ -15,3 +15,5 @@ How to do it:
  * execute command npm install -g bower gulp
  * execute command npm install
  * execute command bower install
+
+If application not display any in browser, check gulp installed successful and run it task "watch:sources" or reload solution (if use Visual Studio).
