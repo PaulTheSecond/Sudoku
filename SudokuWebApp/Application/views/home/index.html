@@ -12,15 +12,9 @@
 
         </div>
 
-        <div>
+        <div ng-if="data">
 
-            <!--<table>
-                <tbody>
-                    <tr ng-repeat="row in sudokuMatrix">
-                        <td ng-repeat="cell in row"><sudoku-cell value="cell" row-index="$parent.$index" column-index="$index"></sudoku-cell></td>
-                    </tr>
-                </tbody>
-            </table>-->
+            <game-field field-data="data"></game-field>
 
         </div>
 

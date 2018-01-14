@@ -11,7 +11,8 @@
     "angular-bootstrap": "^2.5.0",
     "angular-loading-bar": "^0.5.2",
     "angular-resource": "1.6.2",
-    "angular-messages": "1.6.2"
+    "angular-messages": "1.6.2",
+    "underscore": "^1.8.3"
   },
   "overrides": {
     "bootstrap": {
@@ -55,6 +56,11 @@
     "angular-messages": {
       "main": [
         "angular-messages.min.js"
+      ]
+    },
+    "underscore": {
+      "main": [
+        "underscore-min.js"
       ]
     }
   },

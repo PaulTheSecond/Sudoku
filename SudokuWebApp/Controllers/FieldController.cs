@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using SudokuWebApp.Helpers;
 using SudokuWebApp.Services.Generation;
 using SudokuWebApp.ViewModel;
 
@@ -9,9 +9,12 @@ namespace SudokuWebApp.Controllers
     public class FieldController : Controller
     {
         private readonly IGenerationFieldService _generationFieldService;
-        public FieldController(IGenerationFieldService generationFieldService)
+        private readonly IEmptyFieldFactory _emptyFieldFactory;
+        public FieldController(IGenerationFieldService generationFieldService,
+                IEmptyFieldFactory emptyFieldFactory)
         {
             _generationFieldService = generationFieldService;
+            _emptyFieldFactory = emptyFieldFactory;
         }
 
 
@@ -19,12 +22,12 @@ namespace SudokuWebApp.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var solvedField = _generationFieldService.GenerateBaseField();
+            var solvedField = _emptyFieldFactory.Create();// _generationFieldService.GenerateBaseField();
 
             var result = new GameViewModel
             {
-                SolvedField = solvedField,
-                GameField = solvedField
+                SolvedField = MapHelper.CreateCellViewModel(solvedField),
+                GameField = MapHelper.CreateCellViewModel(solvedField)
             };
 
             return Ok(result);

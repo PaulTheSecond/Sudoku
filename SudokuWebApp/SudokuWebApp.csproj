@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Application\app\directives\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

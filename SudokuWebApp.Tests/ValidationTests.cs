@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SudokuWebApp.Model;
+using SudokuWebApp.Services.Generation;
 using SudokuWebApp.Services.Validation;
 
 namespace SudokuWebApp.Tests

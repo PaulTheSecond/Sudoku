@@ -4,7 +4,7 @@ namespace SudokuWebApp.ViewModel
 {
     public class GameViewModel
     {
-        public Cell SolvedField { get; set; }
-        public Cell GameField { get; set; }
+        public CellViewModel SolvedField { get; set; }
+        public CellViewModel GameField { get; set; }
     }
 }
