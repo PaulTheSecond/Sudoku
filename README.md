@@ -3,7 +3,8 @@ Sudoku game
 
 Requirements:
 
- * installed Visual Studio 2017;
+ * installed Visual Studio 2017 or VSCode;
+ * istalled .Net Core 2 SDK;
  * installed Node.js;
 
 To run solution before need to restore npm and bower packages.
