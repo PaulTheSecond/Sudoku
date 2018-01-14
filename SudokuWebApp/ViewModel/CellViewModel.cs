@@ -7,12 +7,7 @@ namespace SudokuWebApp.ViewModel
     {
         public CellViewModel()
         {
-            Children = new List<CellViewModel[]>(3)
-            {
-                new CellViewModel[3],
-                new CellViewModel[3],
-                new CellViewModel[3]
-            };
+            Children = new List<CellViewModel[]>(3);
         }
 
         public int? Value { get; set; }

@@ -15,7 +15,7 @@
         var directive = {
             replace: true,
             restrict: 'E',
-            template: '<input type="text" ng-model="cellData.value" class="cell" ng-focus="onFocus()" ng-disabled="cellData.isDisabled" numbers-only />',
+            template: '<input type="text" ng-model="cellData.value" class="cell" ng-focus="onFocus()" ng-disabled="cellData.isDisabled" numbers-only required />',
             compile: function (element, attributes) {
                 return {
                     pre: function (scope, element, attributes, controller, transcludeFn) {              

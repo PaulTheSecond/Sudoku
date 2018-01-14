@@ -3,20 +3,23 @@
     <div class="col-sm-12">
 
         <h1 class="text-center">Hello, guest! Welcome to sudoku game!</h1>
+        <form ng-submit="onSubmitField(data)">
 
-        <div class="form-group form-inline text-center">
+            <div class="form-group form-inline text-center">
 
-            <button type="button" class="btn btn-primary">New game</button>
-            <button type="button" class="btn btn-warning" ng-click="onHintClick()">Get hint</button>
-            <button type="button" class="btn btn-success">Check result</button>
+                <button type="button" class="btn btn-primary" ng-click="onNewGameClick()">New game</button>
+                <button type="button" class="btn btn-warning" ng-click="onHintClick()">Get hint</button>
+                <button type="submit" class="btn btn-success">Check result</button>
 
-        </div>
+            </div>
 
-        <div ng-if="data">
+            <div ng-if="data">
 
-            <game-field field-data="data"></game-field>
+                <game-field field-data="data"></game-field>
 
-        </div>
+            </div>
+
+        </form>
 
     </div>
 
