@@ -33,6 +33,20 @@ namespace SudokuWebApp.Helpers
             return result;
         }
 
+        public static CellViewModel CreateCellViewModel(int[,] src)
+        {
+            var field = new Cell();
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    field[i.GetAreaIndexFromCell(), j.GetAreaIndexFromCell()] = field[i.GetAreaIndexFromCell(), j.GetAreaIndexFromCell()] ?? new Cell();
+                    field[i.GetAreaIndexFromCell(), j.GetAreaIndexFromCell()][i.GetCellInAreaIndex(), j.GetCellInAreaIndex()] = new Cell { Value = src[i, j] };
+                }
+            }
+            return CreateCellViewModel(field);
+        }
+
         public static Cell CreateCell(CellViewModel src)
         {
             var result = new Cell

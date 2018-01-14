@@ -20,7 +20,8 @@
                 
             },
             scope: {
-                areaData: '='
+                areaData: '=',
+                field: '='
             }
         };
         return directive;

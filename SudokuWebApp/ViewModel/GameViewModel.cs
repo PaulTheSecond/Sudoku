@@ -6,5 +6,6 @@ namespace SudokuWebApp.ViewModel
     {
         public CellViewModel SolvedField { get; set; }
         public CellViewModel GameField { get; set; }
+        public int? DefaultSchemaIndex { get; set; }
     }
 }
