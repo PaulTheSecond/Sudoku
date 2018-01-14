@@ -7,7 +7,7 @@ Requirements:
  * istalled .Net Core 2 SDK;
  * installed Node.js;
 
-To run solution before need to restore npm and bower packages.
+To run solution You need to restore npm and bower packages.
 
 How to do it:
 
